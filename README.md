@@ -1,4 +1,4 @@
-# CapitalRx Route Debug Toolkit - Complete Guide
+# Route Debug Toolkit - Complete Guide
 
 **PRODUCTION-READY** - Comprehensive toolkit for troubleshooting React Router unmounting issues in the CapitalRx shell system.
 
