@@ -12,7 +12,7 @@
  * Options:
  *   --verbose    Show detailed analysis
  *   --json       Output results as JSON
- *   --html       Generate interactive HTML report (default: debugRoutes.html)
+ *   --html       Generate interactive HTML report (default: docs/index.html)
  *   --output     Custom output file path
  *   --help       Show help information
  *
@@ -398,8 +398,14 @@ class RouteDebugger {
   }
 
   generateHTMLReport() {
-    const outputPath = this.options.output || 'debugRoutes.html';
+    const outputPath = this.options.output || 'docs/index.html';
     const html = this.createHTMLContent();
+
+    // Ensure the docs directory exists
+    const outputDir = path.dirname(outputPath);
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
 
     fs.writeFileSync(outputPath, html, 'utf8');
     console.log(`✅ HTML report generated: ${outputPath}`);
@@ -1070,7 +1076,7 @@ ARGUMENTS:
 OPTIONS:
   -v, --verbose          Show detailed file-by-file analysis
   -j, --json             Output results as JSON
-  --html                 Generate interactive HTML report (default)
+  --html                 Generate interactive HTML report (default: docs/index.html)
   --output FILE          Custom output file path
   -h, --help             Show this help message
 
