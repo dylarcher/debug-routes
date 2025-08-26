@@ -1,31 +1,31 @@
-# 🔧 CapitalRx Route Debug Toolkit - Complete Guide
+# CapitalRx Route Debug Toolkit - Complete Guide
 
-**✅ PRODUCTION-READY** - Comprehensive toolkit for troubleshooting React Router unmounting issues in the CapitalRx shell system.
-
----
-
-## 📑 Table of Contents
-
-1. [🚀 Quick Start](#-quick-start)
-2. [📁 Toolkit Structure](#-toolkit-structure)
-3. [🎯 Available npm Scripts](#-available-npm-scripts)
-4. [🔍 What This Toolkit Solves](#-what-this-toolkit-solves)
-5. [🛠 Available Tools](#-available-tools)
-6. [📊 Root Cause Analysis](#-root-cause-analysis)
-7. [🏆 Issues Identified & Fixes Applied](#-issues-identified--fixes-applied)
-8. [📖 Step-by-Step Fix Process](#-step-by-step-fix-process)
-9. [🧪 Debugging Tools](#-debugging-tools)
-10. [📋 Migration Checklist](#-migration-checklist)
-11. [📊 Common Patterns by Module Type](#-common-patterns-by-module-type)
-12. [🧪 Testing Your Fixes](#-testing-your-fixes)
-13. [🚨 Troubleshooting Guide](#-troubleshooting-guide)
-14. [🔄 Integration Workflows](#-integration-workflows)
-15. [🤝 Team Usage](#-team-usage)
-16. [📚 Additional Resources](#-additional-resources)
+** PRODUCTION-READY** - Comprehensive toolkit for troubleshooting React Router unmounting issues in the CapitalRx shell system.
 
 ---
 
-## 🚀 Quick Start
+## Table of Contents
+
+1. [Quick Start](#-quick-start)
+2. [Toolkit Structure](#-toolkit-structure)
+3. [Available npm Scripts](#-available-npm-scripts)
+4. [What This Toolkit Solves](#-what-this-toolkit-solves)
+5. [Available Tools](#-available-tools)
+6. [Root Cause Analysis](#-root-cause-analysis)
+7. [Issues Identified & Fixes Applied](#-issues-identified--fixes-applied)
+8. [Step-by-Step Fix Process](#-step-by-step-fix-process)
+9. [Debugging Tools](#-debugging-tools)
+10. [Migration Checklist](#-migration-checklist)
+11. [Common Patterns by Module Type](#-common-patterns-by-module-type)
+12. [Testing Your Fixes](#-testing-your-fixes)
+13. [Troubleshooting Guide](#-troubleshooting-guide)
+14. [Integration Workflows](#-integration-workflows)
+15. [Team Usage](#-team-usage)
+16. [Additional Resources](#-additional-resources)
+
+---
+
+## Quick Start
 
 **Get started in 30 seconds:**
 
@@ -53,28 +53,7 @@ npm run route-debug-help           # Show analyzer help
 
 ---
 
-## 📁 Toolkit Structure
-
-```
-adjudication.capitalrx.com/modules/devtools/
-├── 📋 README.md                     ← You are here (this comprehensive guide)
-├── 📋 FINAL_SUMMARY.md              ← Quick reference and setup
-├── 📋 BEST_PRACTICES_GUIDE.md       ← Detailed troubleshooting guide
-├── 📋 CONCERNS_AND_ISSUES.md        ← Implementation guide
-├── 📋 scriptGuide.md                ← Script usage guide
-├── 🛠 package.json                  ← Ready with npm scripts
-└── src/helpers/
-    ├── 🔍 route-analyzer.js         ← CLI analysis tool (ENHANCED)
-    ├── 🧪 map-esm-deps.js           ← Runtime debugging utilities
-    ├── 🌐 route-debugger.html       ← Browser diagnostic tool
-    ├── ✅ PARoutes-Fixed.tsx        ← Working PA module example
-    ├── 📝 RouteFixTemplate.tsx      ← Generic fix patterns
-    └── 📚 Additional documentation files
-```
-
----
-
-## 🎯 Available npm Scripts
+## Available npm Scripts
 
 All scripts are production-ready and easy to share across teams:
 
@@ -94,7 +73,7 @@ npm run route-debug-help           # Show analyzer help
 
 ---
 
-## 🔍 What This Toolkit Solves
+## What This Toolkit Solves
 
 This toolkit provides comprehensive solutions for React Router unmounting issues that cause:
 
@@ -104,19 +83,19 @@ This toolkit provides comprehensive solutions for React Router unmounting issues
 - **Performance Issues**: Excessive re-renders and API calls during navigation
 - **Module Instability**: Shell module boundaries interfering with routing
 
-### 🎯 Detection Categories
+### Detection Categories
 
 **Detects 9 categories of issues that cause React Router component unmounting:**
 
-- 🚨 **High Severity**: Dynamic route generation, context above Routes, QueryClient recreation
-- ⚠️ **Medium Severity**: Shell hook issues, ActivityContext problems
-- ℹ️ **Low Severity**: Missing memoization, performance patterns
+- **High Severity**: Dynamic route generation, context above Routes, QueryClient recreation
+- **Medium Severity**: Shell hook issues, ActivityContext problems
+- **Low Severity**: Missing memoization, performance patterns
 
 ---
 
-## 🛠 Available Tools
+## Available Tools
 
-### 1. 🔍 Route Analyzer (`route-analyzer.js`)
+### 1. Route Analyzer (`route-analyzer.js`)
 
 **Enhanced CLI tool** that scans your codebase for routing issues.
 
@@ -133,11 +112,11 @@ OPTIONS:
 
 - Enhanced CLI interface with progress indicators
 - Better error handling and file statistics
-- Severity categorization (High🚨, Medium⚠️, Low ℹ️)
+- Severity categorization (High, Medium⚠, Low)
 - CI/CD ready with exit codes and JSON output
 - 9 categories of issue detection including performance patterns
 
-### 2. 🧪 Runtime Debugger (`map-esm-deps.js`)
+### 2. Runtime Debugger (`map-esm-deps.js`)
 
 React hooks and utilities for runtime debugging.
 
@@ -151,18 +130,18 @@ useRouteUnmountDebugger("MyModule");
 const stableRoutes = useStableRoutes(routes);
 ```
 
-### 3. 🌐 Browser Diagnostic Tool (`route-debugger.html`)
+### 3. Browser Diagnostic Tool (`route-debugger.html`)
 
 Interactive browser tool for debugging route issues.
 
-### 4. 📝 Fix Templates
+### 4. Fix Templates
 
 - `PARoutes-Fixed.tsx` - Working PA module implementation
 - `RouteFixTemplate.tsx` - Generic fix patterns
 
 ---
 
-## 📊 Root Cause Analysis
+## Root Cause Analysis
 
 ### Primary Issues Identified
 
@@ -176,7 +155,7 @@ The `capitalrx-shell` system has complex route handling that manages modules dyn
 </AsyncWrapper>
 ```
 
-#### 2. **QueryClient Recreation** ❌
+#### 2. **QueryClient Recreation**
 
 **Problem**: New QueryClient instances created in route components
 
@@ -199,7 +178,7 @@ export const queryClient = new QueryClient({
 });
 ```
 
-#### 3. **Context Placement Above Routes** ❌
+#### 3. **Context Placement Above Routes**
 
 **Problem**: Context providers placed above shell routing level
 
@@ -223,7 +202,7 @@ export const queryClient = new QueryClient({
 </QueryClientProvider>
 ```
 
-#### 4. **Dynamic Route Array Recreation** ❌
+#### 4. **Dynamic Route Array Recreation**
 
 **Problem**: Route arrays recreated on each render
 
@@ -249,7 +228,7 @@ const Component = () => {
 
 ---
 
-## 🏆 Issues Identified & Fixes Applied
+## Issues Identified & Fixes Applied
 
 ### 1. QueryClient Recreation Issue
 
@@ -372,7 +351,7 @@ const PARoutesComponent = () => {
 
 ---
 
-## 📖 Step-by-Step Fix Process
+## Step-by-Step Fix Process
 
 ### Phase 1: Analysis & Discovery
 
@@ -501,7 +480,7 @@ window.CapitalRxRouteDebugger.diagnoseUnmountIssues({
 
 ---
 
-## 🧪 Debugging Tools
+## Debugging Tools
 
 ### 1. Route Unmount Debugger
 
@@ -543,7 +522,7 @@ Use `StableContextProvider` for debugging context recreation:
 
 ---
 
-## 📋 Migration Checklist
+## Migration Checklist
 
 When updating a module's routing:
 
@@ -572,7 +551,7 @@ When updating a module's routing:
 
 ---
 
-## 📊 Common Patterns by Module Type
+## Common Patterns by Module Type
 
 ### Simple Module (Basic Routes)
 
@@ -646,7 +625,7 @@ const AppShell: FC = () => {
 
 ---
 
-## 🧪 Testing Your Fixes
+## Testing Your Fixes
 
 ### Browser Console Debugging
 
@@ -679,30 +658,30 @@ window.CapitalRxRouteDebugger.diagnoseUnmountIssues({
 ### Example Analysis Output
 
 ```
-🔧 CapitalRx Route Analyzer
+CapitalRx Route Analyzer
 ============================
-🎯 Analyzing: /path/to/module
+Analyzing: /path/to/module
 
-  📄 src/PARoutes.tsx
-    Issues: 2🚨 1⚠️ 0ℹ️
+  src/PARoutes.tsx
+    Issues: 2/1/0
 
-📊 Analysis Complete
+Analysis Complete
 Files analyzed: 5
 Files with issues: 3
 Total issues: 6
 
-🚨 HIGH SEVERITY ISSUES:
+HIGH SEVERITY ISSUES:
   ❌ src/PARoutes.tsx: Dynamic route generation detected
   ❌ src/PARoutes.tsx: Context above Routes detected
 
-💡 RECOMMENDATIONS:
-  💡 src/PARoutes.tsx: Wrap routes in useMemo
-  💡 src/PARoutes.tsx: Move QueryClient to module level
+RECOMMENDATIONS:
+  src/PARoutes.tsx: Wrap routes in useMemo
+  src/PARoutes.tsx: Move QueryClient to module level
 ```
 
 ---
 
-## 🚨 Troubleshooting Guide
+## Troubleshooting Guide
 
 ### Issue: Routes Still Remounting
 
@@ -748,7 +727,7 @@ Check your route paths match exactly what the shell expects for your module.
 
 ---
 
-## 🔄 Integration Workflows
+## Integration Workflows
 
 ### For Development Teams
 
@@ -788,9 +767,7 @@ npm run route-debug-pa | grep "HIGH SEVERITY" -A 5
 
 ---
 
-## 🤝 Team Usage
-
-### Share with Your Team
+## Team Usage
 
 **Option 1: Copy the toolkit directory**
 
@@ -832,7 +809,7 @@ npm run route-debug-pa | tee pa-analysis.txt
 
 ---
 
-## 📚 Additional Resources
+## Additional Resources
 
 ### Browser Tools
 
@@ -858,16 +835,16 @@ npm run route-debug-pa | tee pa-analysis.txt
 
 ### Quick Reference Links
 
-- **🎯 Start Here**: Quick start guide (above)
-- **🔧 Deep Dive**: Complete troubleshooting (above)
-- **📝 Implementation**: Step-by-step fixes (above)
-- **💻 Examples**: Working code examples (above)
+- **Start Here**: Quick start guide (above)
+- **Deep Dive**: Complete troubleshooting (above)
+- **Implementation**: Step-by-step fixes (above)
+- **Examples**: Working code examples (above)
 
 ---
 
-## 📋 Common Use Cases & Commands
+## Common Use Cases & Commands
 
-### 🔍 "My routes are unmounting - help!"
+### "My routes are unmounting - help!"
 
 ```bash
 npm run route-analyze-verbose                    # Find the issues
@@ -875,21 +852,21 @@ open src/helpers/route-debugger.html            # Debug in browser
 # Check this guide for fixes
 ```
 
-### 🧪 "I made changes - did I fix it?"
+### "I made changes - did I fix it?"
 
 ```bash
 npm run route-analyze                           # Before & after comparison
 node src/helpers/map-esm-deps.js               # Runtime debugging utilities
 ```
 
-### 👥 "Share analysis with the team"
+### "Share analysis with the team"
 
 ```bash
 npm run route-analyze-json > analysis-$(date +%Y%m%d).json
 npm run route-analyze-verbose > analysis.txt
 ```
 
-### 🏗 "Integrate with our build process"
+### Integrate with our build process"
 
 ```bash
 npm run route-analyze-json | jq '.summary.totalIssues'  # Get issue count
@@ -897,7 +874,7 @@ npm run route-analyze-json | jq '.summary.totalIssues'  # Get issue count
 
 ---
 
-## ⚡ TL;DR - Copy & Paste Commands
+## TL;DR - Copy & Paste Commands
 
 ```bash
 # Get started immediately
@@ -917,20 +894,16 @@ npm run route-analyze  # Should show fewer/no issues
 
 ---
 
-## 🎉 Success! Your Toolkit is Ready
+## Next Steps
 
-**This toolkit is now production-ready and can be easily shared across teams.** All scripts are tested, documentation is comprehensive, and the tools provide actionable insights for fixing React Router unmounting issues in the CapitalRx shell system.
-
-**Next Steps:**
-
-1. ✅ Use `npm run route-analyze-verbose` on your modules
-2. ✅ Follow fixes in this guide
-3. ✅ Share toolkit directory with your team
-4. ✅ Integrate JSON output into your CI/CD pipeline
+- [ ]: Use `npm run route-analyze-verbose` on your modules
+- [ ]: Follow fixes in this guide
+- [ ]: Share toolkit directory with your team
+- [ ]: Integrate JSON output into your CI/CD pipeline
 
 ---
 
-**Version:** 2.0  
-**Last Updated:** August 26, 2025  
-**Maintained by:** CapitalRx Development Tools Team
-# debug-routes
+> **Version:** 2.0  
+> **Last Updated:** August 26, 2025  
+
+## debug-routes
