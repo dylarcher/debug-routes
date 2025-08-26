@@ -1,0 +1,31 @@
+{
+  "author": "Dylan Archer",
+  "bin": {
+    "debug-routes": "./bin/cli.js"
+  },
+  "description": "CapitalRx Route Debugger - Comprehensive CLI tool for analyzing React Router unmounting issues",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "keywords": [
+    "react-router",
+    "debugging",
+    "route",
+    "unmount",
+    "capitalrx",
+    "cli"
+  ],
+  "license": "MIT",
+  "main": "bin/cli.js",
+  "name": "debug-routes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dylarcher/debug-routes.git"
+  },
+  "scripts": {
+    "analyze": "node bin/cli.js --html",
+    "debug": "node bin/cli.js",
+    "help": "node bin/cli.js --help"
+  },
+  "version": "1.0.0"
+}
